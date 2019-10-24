@@ -1,0 +1,74 @@
+
+#hero-wrapper {
+    // background-color: aqua;
+    width: 100%;
+    height: 100vh;
+    // background-image: url('../img/momo_agents-min.jpg'); // to switch if video 
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+#overlay {
+    background-color: #202020;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    opacity: .6;
+}
+
+#login-form-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 25%;
+    color: white;
+    position: relative;
+    margin: 20px;
+    margin-right: 140px;
+    padding: 25px;
+    border-radius: 22px;
+    background: transparent;
+    /* Note: currently only Safari supports backdrop-filter */
+    backdrop-filter: blur(9px);
+    --webkit-backdrop-filter: blur(9px);
+    background-color: rgba(255, 255, 255, 0.15);
+
+    .reset-pswd-link {
+        color: white;
+        text-decoration: underline;
+    }
+}
+
+#logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    margin: 10px;
+    .logo-title {
+        margin-left:10px;
+        b { font-size: 1.2em}
+    }
+}
+
+#videoBg {
+    position: fixed;
+    z-index: -1;
+    background-image: url('../img/momo_agents-min.jpg'); // to switch if video 
+    background-size: cover;
+}
+@media (min-aspect-ratio: 16/9) {
+    #videoBg {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    #videoBg {
+        width: auto;
+        height: 100%;
+    }
+}
