@@ -1,3 +1,7 @@
+html, body {
+  margin: 0px;
+  height: 100%; }
+
 #hero-wrapper {
   width: 100%;
   height: 100vh;
@@ -11,9 +15,10 @@
 #overlay {
   background-color: #202020;
   position: absolute;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
-  opacity: .6; }
+  opacity: .6;
+  z-index: 2; }
 
 #login-form-wrapper {
   display: flex;
@@ -23,10 +28,10 @@
   color: white;
   position: relative;
   margin: 20px;
-  margin-right: 140px;
   padding: 25px;
   border-radius: 22px;
   background: transparent;
+  z-index: 10;
   /* Note: currently only Safari supports backdrop-filter */
   backdrop-filter: blur(9px);
   --webkit-backdrop-filter: blur(9px);
@@ -49,14 +54,67 @@
   position: fixed;
   z-index: -1;
   background-image: url("../img/momo_agents-min.jpg");
-  background-size: cover; }
+  background-size: cover;
+  background-position: 50% 50%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
 
 @media (min-aspect-ratio: 16 / 9) {
   #videoBg {
-    width: 100%;
-    height: auto; } }
+    min-width: 100%;
+    min-height: 100%; } }
 
 @media (max-aspect-ratio: 16 / 9) {
   #videoBg {
-    width: auto;
-    height: 100%; } }
+    min-width: 100%;
+    min-height: 100%; } }
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+@media (min-width: 1281px) {
+  #login-form-wrapper {
+    width: 30%;
+    margin-right: 80px; } }
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+@media (min-width: 1025px) and (max-width: 1280px) {
+  #login-form-wrapper {
+    width: 40%; } }
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  #login-form-wrapper {
+    width: 45%; }
+  #hero-wrapper {
+    justify-content: center; } }
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  #hero-wrapper {
+    justify-content: flex-end; } }
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@media (min-width: 320px) and (max-width: 767px) {
+  #login-form-wrapper {
+    width: 100%; } }
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
