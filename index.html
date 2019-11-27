@@ -6,6 +6,7 @@
     <title>OTD Landing Page</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fafafa">
 
     <link rel="apple-touch-icon" href="icon.png">
     <!-- Place favicon.ico in the root directory -->
@@ -14,15 +15,21 @@
 
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link href="https://vjs.zencdn.net/7.5.5/video-js.css" rel="stylesheet" />
 
-    <meta name="theme-color" content="#fafafa">
+    <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+    <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 </head>
 
 <body>
     <div id="hero-wrapper">
-        <div id="overlay"></div>
         <!-- if video -->
-        <video id="videoBg" poster="./assets/img/momo_agents-min.jpg" autoplay muted loop src="./assets/video-bg.mp4" ></video>
+        <!-- <video id="videoBg" autoplay  loop controls   src="./assets/test-vid.mp4" ></video> -->
+        <div id="overlay"></div>
+        <!-- Video JS to handle Autoplay Policy -->
+        <video-js id="videoBg" class="vjs-default-skin vjs-show-big-play-button-on-pause " width="100%" heigth="100%" autoplay loop controls  data-setup='{"fluid": true,"autoplay": true}'>
+            <source src="./assets/test-vid.mp4" type="video/mp4">
+            </video-js>
         <!--  -->
         <div id="login-form-wrapper">
             <div id="logo-wrapper">
@@ -73,6 +80,7 @@
 
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+    <script src="https://vjs.zencdn.net/7.5.5/video.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
     <script>
